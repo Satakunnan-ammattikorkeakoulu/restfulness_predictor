@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "f500QiU6NN+sYduovjZF4KAk6zGh7Kxf+HN6xgT3e4mDHSsCKH241ri8ExQzMaIUAny+kbmUEwCSLcx11DjnhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mipentt\\git_repos\\EEGReact\\restfulness_predictor\\restfulness_predictor\\restfulness_predictor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mipentt\\.nuget\\packages\\brainflow\\5.8.0\\brainflow.5.8.0.nupkg.sha512",
+    "C:\\Users\\mipentt\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}

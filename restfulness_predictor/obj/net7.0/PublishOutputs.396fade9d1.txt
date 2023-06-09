@@ -1,0 +1,7 @@
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\restfulness_predictor.exe
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\restfulness_predictor.dll
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\restfulness_predictor.deps.json
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\restfulness_predictor.runtimeconfig.json
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\restfulness_predictor.pdb
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\brainflow.dll
+C:\Users\mipentt\git_repos\ReactEEG\restfulness_predictor\bin\net7.0\publish\CommandLine.dll
