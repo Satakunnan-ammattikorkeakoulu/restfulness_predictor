@@ -97,7 +97,7 @@ public class Predictor
     {
         if (_predictionInterval < 500) throw new ArgumentException("Interval must be greater than 499.");
         if (_isStreaming) throw new InvalidOperationException("Cannot start stream, it is already running.");
-        Console.WriteLine("Starting stream");
+        Console.WriteLine("Starting stream...");
         _boardShim.start_stream();
         _isStreaming = true;
         _timer.Interval = _predictionInterval;

@@ -182,7 +182,6 @@ internal class Program
         {
             case "start":
                 Console.WriteLine();
-                Console.WriteLine("Streaming data...");
                 if (mode == 0) predictor.StartPredictSession();
                 else predictor.StartRecordSession();
                 break;
