@@ -30,6 +30,7 @@ Parameters to include when running:
     * GANGLION_NATIVE_BOARD
     * MUSE_2_BOARD
     * MUSE_S_BOARD
+    * PLAYBACK_FILE_BOARD (Feature not complete yet)
 
 ---
 

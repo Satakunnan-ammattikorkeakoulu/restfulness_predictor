@@ -58,7 +58,14 @@ internal class Program
     {
         Console.WriteLine();
         Console.WriteLine($"Board ID: {options.BoardId}");
-        Console.WriteLine($"Sampling rate: {BoardShim.get_sampling_rate((int)options.BoardId)}");
+        // TODO: This is a bit hacky. The playback board obviously does not have a sampling rate, but the master_board does.
+        // The problem is that the actual predictor has not been created yet, so we don't know the master_board id at this point.
+        // Would it be worth it to change the order of operations for this? Is there any point in even printing the sampling rate?
+        if (options.BoardId != BoardIds.PLAYBACK_FILE_BOARD)
+        {
+            Console.WriteLine($"Sampling rate: {BoardShim.get_sampling_rate((int)options.BoardId)}");
+        }
+
         // TODO: Hardcoded values, should be read from options once they are back in use.
         // Console.WriteLine($"Bandpass frequencies: {string.Join(" - ", options.Bandpass)}");
         // Console.WriteLine($"Bandstop frequencies: {string.Join(" - ", options.Bandstop)}");
@@ -72,6 +79,7 @@ internal class Program
     {
         Console.WriteLine("Error parsing command-line arguments:");
         foreach (var error in errors) Console.WriteLine(error.ToString());
+        Environment.Exit(1);
     }
 
     private static void SavePredictions(Predictions recording)
@@ -148,6 +156,7 @@ internal class Program
             return 0;
         }
 
+        // TODO: Control flow through error handling... This needs a fix.
         try
         {
             var mode = int.Parse(userInput) switch
@@ -158,9 +167,8 @@ internal class Program
             };
             return mode;
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine(e);
             Console.WriteLine("Using default");
             return 0;
         }

@@ -43,6 +43,10 @@ public class Predictor
     public Predictor(BoardIds boardId, double[] bandpassFrequencies, double[] bandstopFrequencies,
         int predictionInterval, bool ica)
     {
+        // TODO: To make the PLAYBACK_FILE_BOARD we need to do stuff here. If the boardId is PLAYBACK_FILE_BOARD the BrainFlowInputParams needs: 
+        //  - .file for the file path
+        //  - .master_board for the boardId of the board that was used to record the file
+        
         var inputParams = new BrainFlowInputParams();
         _boardShim = new BoardShim((int)boardId, inputParams);
         _samplingRate = BoardShim.get_sampling_rate(_boardShim.get_board_id());
