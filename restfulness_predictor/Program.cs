@@ -65,6 +65,10 @@ internal class Program
         {
             Console.WriteLine($"Sampling rate: {BoardShim.get_sampling_rate((int)options.BoardId)}");
         }
+        else
+        {
+            Console.WriteLine($"File path: {options.FilePath}");
+        }
 
         // TODO: Hardcoded values, should be read from options once they are back in use.
         // Console.WriteLine($"Bandpass frequencies: {string.Join(" - ", options.Bandpass)}");
