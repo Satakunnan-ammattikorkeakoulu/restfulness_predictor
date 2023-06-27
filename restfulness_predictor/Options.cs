@@ -1,5 +1,3 @@
-// TODO: Figure out how to deal with the "potential null reference" warnings.
-
 using CommandLine;
 using System.ComponentModel.DataAnnotations;
 using brainflow;
@@ -15,10 +13,10 @@ public class Options
     [ValidateBoardId]
     public BoardIds BoardId { get; set; }
 
-    [Option('p', "bandpass", HelpText = "Bandpass filter range (low, high).", Default = new[] { 0.5, 40.0 })]
+    [Option('p', "bandpass", HelpText = "Bandpass filter range (low, high). Not in use.", Default = new[] { 2.0, 45.0 })]
     public IEnumerable<double> Bandpass { get; set; }
 
-    [Option('s', "bandstop", HelpText = "Bandstop filter range (low, high).", Default = new[] { 49.0, 51.0 })]
+    [Option('s', "bandstop", HelpText = "Bandstop filter range (low, high). Not in use.", Default = new[] { 48.0, 52.0 })]
     public IEnumerable<double> Bandstop { get; set; }
 
     [Option('i', "ica", HelpText = "Use ICA. Experimental feature, use is not recommended.", Default = false)]

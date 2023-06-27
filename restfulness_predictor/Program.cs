@@ -14,7 +14,7 @@ internal class Program
         var options = new Options();
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(o => { options = o; })
-            .WithNotParsed(errors => { HandleParsingErrors(errors); });
+            .WithNotParsed(HandleParsingErrors);
 
         PrintOptions(options);
 
@@ -59,9 +59,13 @@ internal class Program
         Console.WriteLine();
         Console.WriteLine($"Board ID: {options.BoardId}");
         Console.WriteLine($"Sampling rate: {BoardShim.get_sampling_rate((int)options.BoardId)}");
-        // TODO: These frequencies shown are not the actual frequencies used in the program. Make them correct.
-        Console.WriteLine($"Bandpass frequencies: {string.Join(" - ", options.Bandpass)}");
-        Console.WriteLine($"Bandstop frequencies: {string.Join(" - ", options.Bandstop)}");
+        // TODO: Hardcoded values, should be read from options once they are back in use.
+        // Console.WriteLine($"Bandpass frequencies: {string.Join(" - ", options.Bandpass)}");
+        // Console.WriteLine($"Bandstop frequencies: {string.Join(" - ", options.Bandstop)}");
+        Console.WriteLine("Bandpass frequencies: 2 - 45");
+        Console.WriteLine("Bandstop frequencies: 48 - 52");
+        Console.WriteLine("Bandstop frequencies: 58 - 62");
+        Console.WriteLine($"ICA: {(options.Ica ? "enabled" : "disabled")}");
     }
 
     private static void HandleParsingErrors(IEnumerable<Error> errors)

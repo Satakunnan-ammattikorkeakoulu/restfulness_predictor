@@ -17,12 +17,12 @@ Build with `dotnet build --configuration Release --self-contained true`
 
 Parameters to include when running:
 
-| Short | Long       | Value                       | Default         |
-|-------|------------|-----------------------------|-----------------|
-| -b    | --boardid  | *                           | SYNTHETIC_BOARD |
-| -p    | --bandpass | Two space separated doubles | 0.5 40.0        |
-| -s    | --bandstop | Two space separated doubles | 49.0 51.0       |
-| -     | --ica      | N/A                         | False           |
+| Short | Long       | Value                       | Default         | Notes        |
+|-------|------------|-----------------------------|-----------------|--------------|
+| -b    | --boardid  | *                           | SYNTHETIC_BOARD |              |
+| -p    | --bandpass | Two space separated doubles | 2.0 45.0        | Not in use   |
+| -s    | --bandstop | Two space separated doubles | 48.0 52.0       | Not in use   |
+| -i    | --ica      | N/A                         | False           | Experimental |
 
 * Board ID is the ID of the board to connect to. Formatting is the same as the BoardIds enum in the brainflow
   library. Valid ones are:
@@ -46,31 +46,3 @@ If the dev logging is enabled in the application these files will be created. Th
 second is the machine learning log. These are useful for debugging and seeing what is happening in the background.
 
 ---
-
-## Ideas on how to improve the prediction
-
-- ICA on each of the channels?
-  - Intuitively this would not affect anything since the predictions are done from avg band powers
-- Sliding window on the prediction?
-  - Instead of doing a new predictions on completely new 5sec data maybe overlap the data a bit?
-- Don't use custom filtering
-  - The model was trained with certain filters so using the same filtering tech is probably a good idea
-
----
-
-## Misc
-
-4 sec interwall with no sliding window
--------1-------2-------3-------4
-
-2sec interwall with 2 sec sliding window
-
----1
--------2
-    -------3
-        -------4
-            -------5
-                -------6
-                    -------7
-                        -------8
-
